@@ -129,3 +129,19 @@ a {
 }
 
 @media (min-width: 1200px) {}
+
+/* Arah Kiblat dan Jadwal Sholat */
+.qibla-container,
+.prayer-times-container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.qibla-container h3,
+.prayer-times-container h3 {
+    color: var(--blue2);
+    margin-bottom: 15px;
+}
