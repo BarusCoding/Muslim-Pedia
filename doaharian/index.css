@@ -1,9 +1,24 @@
+:root {
+    --primary-color: #007bff;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --border-color: #ddd;
+    --border-radius: 8px;
+    --font-size-base: 16px;
+}
+
+body {
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+}
+
 .doa-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
     margin-bottom: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .doa-card h5 {
@@ -27,5 +42,23 @@
 
 .doa-card .expand-btn {
     cursor: pointer;
-    color: #007bff;
+    color: var(--primary-color);
+}
+
+/* Gaya untuk loading dan error */
+.spinner-border {
+    margin: 20px auto;
+}
+
+.text-danger {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .doa-card {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
