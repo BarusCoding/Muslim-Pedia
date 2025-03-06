@@ -2,7 +2,8 @@
    --yellow: #FFD500;
    --blue1: #003F88;
    --blue2: #00296B;
-   --white: #F7F7F7;
+   --white: #ffffff;
+}
    font-size: 12px;
 }
 
@@ -253,4 +254,44 @@ button {
    .jadwal-icon {
       width: 62px;
    }
+}
+
+
+.mobile-footer-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-footer-menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--blue2);
+  text-decoration: none;
+  font-size: 12px;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.mobile-footer-menu a img {
+  width: 24px;
+  margin-bottom: 4px;
+}
+
+.mobile-footer-menu a:hover {
+  background-color: #f0f0f0; /* Efek hover saat kursor diarahkan ke tautan */
+}
+
+/* Sembunyikan menu footer mobile pada layar yang lebih besar */
+@media (min-width: 768px) {
+  .mobile-footer-menu {
+    display: none;
+  }
 }
