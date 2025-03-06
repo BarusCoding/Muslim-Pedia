@@ -278,6 +278,26 @@ $.ajax({
   },
 });
 
+//zakat
+$(document).ready(function() {
+    $('#hitungZakat').click(function() {
+        let harta = parseFloat($('#harta').val()) || 0;
+        let hutang = parseFloat($('#hutang').val()) || 0;
+        let nishab = parseFloat($('#nishab').val());
+
+        let hartaBersih = harta - hutang;
+        let zakat = 0;
+
+        if (hartaBersih >= nishab) {
+            zakat = hartaBersih * 0.025; // 2.5% zakat
+            $('#hasilZakat').html(`<p>Total zakat yang harus Anda bayar adalah: Rp ${zakat.toLocaleString()}</p>`);
+        } else {
+            $('#hasilZakat').html(`<p>Harta Anda belum mencapai nishab. Anda belum wajib membayar zakat.</p>`);
+        }
+    });
+});
+//zakat
+
 function copyLink() {
   navigator.clipboard.writeText("https://islamic-bit.netlify.app");
 }
