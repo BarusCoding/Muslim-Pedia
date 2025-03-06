@@ -103,25 +103,3 @@ $.ajax({
       });
    }
 })
-
-
-$(document).ready(function () {
-    const bacaanSholat = listBacaanSholat;
-    const listContainer = $('.bacaan-sholat .list');
-    listContainer.empty();
-    bacaanSholat.forEach(bacaan => {
-        listContainer.append(`
-            <div class="item">
-                <h5 data-bs-toggle="modal" data-bs-target="#niatSholat" data-sholat="<span class="math-inline">\{bacaan\.nama\}"\></span>{bacaan.nama}</h5>
-            </div>
-        `);
-    });
-
-    $('#niatSholat').on('show.bs.modal', function (event) {
-        const button = $(event.relatedTarget);
-        const sholat = button.data('sholat');
-        const niat = bacaanSholat.find(b => b.nama === sholat).niat;
-        $('.daftar-niat-sholat').html(niat);
-    });
-
-    
