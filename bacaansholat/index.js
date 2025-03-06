@@ -124,38 +124,4 @@ $(document).ready(function () {
         $('.daftar-niat-sholat').html(niat);
     });
 
-    const barusjaheLatitude = 3.1256;
-    const barusjaheLongitude = 98.4233;
-    const qiblaDirection = calculateQiblaDirection(barusjaheLatitude, barusjaheLongitude);
-    $('#qibla-direction').text(`${qiblaDirection.toFixed(2)}°`);
-
-    const today = new Date();
-    getPrayerTimes(barusjaheLatitude, barusjaheLongitude, today);
-});
-
-function calculateQiblaDirection(latitude, longitude) {
-    const makkahLatitude = 21.4225;
-    const makkahLongitude = 39.8262;
-
-    const latRad = latitude * Math.PI / 180;
-    const lonRad = longitude * Math.PI / 180;
-    const makkahLatRad = makkahLatitude * Math.PI / 180;
-    const makkahLonRad = makkahLongitude * Math.PI / 180;
-
-    const y = Math.sin(makkahLonRad - lonRad) * Math.cos(makkahLatRad);
-    const x = Math.cos(latRad) * Math.sin(makkahLatRad) - Math.sin(latRad) * Math.cos(makkahLatRad) * Math.cos(makkahLonRad - lonRad);
-
-    let qiblaDirection = Math.atan2(y, x) * 180 / Math.PI;
-
-    if (qiblaDirection < 0) {
-        qiblaDirection += 360;
-    }
-
-    return qiblaDirection;
-}
-
-function getPrayerTimes(latitude, longitude, date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    const apiUrl = `https://api.myquran.com/v1/sholat/120
+    
