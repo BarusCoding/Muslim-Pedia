@@ -49,5 +49,18 @@ $.ajax({
             }
          })
       });
+
+      
    }
 })
+
+$.ajax({
+      url: 'https://islamic-api-zhirrr.vercel.app/api/doaharian',
+      success: results => {
+        // ... kode success
+      },
+      error: (xhr, status, error) => {
+        console.error("Error fetching data:", status, error);
+        $('.doa-harian .container').html("<p>Gagal memuat data doa.</p>");
+      }
+    });
