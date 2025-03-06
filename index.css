@@ -302,3 +302,19 @@ body {
   }
 }
 
+
+.kalkulator-zakat .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kalkulator-zakat .btn-primary {
+    background-color: var(--blue2);
+    border-color: var(--blue2);
+}
+
+.kalkulator-zakat .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
