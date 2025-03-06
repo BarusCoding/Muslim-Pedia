@@ -257,6 +257,12 @@ button {
 }
 
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Memastikan body menempati seluruh tinggi viewport */
+}
+
 .mobile-footer-menu {
   position: fixed;
   bottom: 0;
