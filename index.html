@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -360,35 +359,35 @@
             <div class="col-md-8">
                 <div class="card p-4 shadow-sm">
                     <form id="zakatForm">
-                        <div id="maalFields" class="zakat-fields">
-                            <button type="button" id="hitungMaal" class="btn btn-primary">Hitung Zakat Maal</button>
-                            <div id="hasilMaal" class="mt-3"></div>
+                        <div class="mb-3">
+                            <label for="jenisZakat" class="form-label">Pilih Jenis Zakat</label>
+                            <select class="form-select" id="jenisZakat">
+                                <option value="maal">Zakat Maal</option>
+                                <option value="fitrah">Zakat Fitrah</option>
+                                <option value="penghasilan">Zakat Penghasilan</option>
+                                <option value="perdagangan">Zakat Perdagangan</option>
+                                <option value="pertanian">Zakat Pertanian</option>
+                                <option value="peternakan">Zakat Peternakan</option>
+                            </select>
                         </div>
+
+                        <div id="maalFields" class="zakat-fields">
+                            </div>
 
                         <div id="fitrahFields" class="zakat-fields" style="display: none;">
-                            <button type="button" id="hitungFitrah" class="btn btn-primary">Hitung Zakat Fitrah</button>
-                            <div id="hasilFitrah" class="mt-3"></div>
-                        </div>
+                            </div>
 
                         <div id="penghasilanFields" class="zakat-fields" style="display: none;">
-                            <button type="button" id="hitungPenghasilan" class="btn btn-primary">Hitung Zakat Penghasilan</button>
-                            <div id="hasilPenghasilan" class="mt-3"></div>
-                        </div>
+                            </div>
 
                         <div id="perdaganganFields" class="zakat-fields" style="display: none;">
-                            <button type="button" id="hitungPerdagangan" class="btn btn-primary">Hitung Zakat Perdagangan</button>
-                            <div id="hasilPerdagangan" class="mt-3"></div>
-                        </div>
+                            </div>
 
                         <div id="pertanianFields" class="zakat-fields" style="display: none;">
-                            <button type="button" id="hitungPertanian" class="btn btn-primary">Hitung Zakat Pertanian</button>
-                            <div id="hasilPertanian" class="mt-3"></div>
-                        </div>
+                            </div>
 
                         <div id="peternakanFields" class="zakat-fields" style="display: none;">
-                            <button type="button" id="hitungPeternakan" class="btn btn-primary">Hitung Zakat Peternakan</button>
-                            <div id="hasilPeternakan" class="mt-3"></div>
-                        </div>
+                            </div>
                     </form>
                 </div>
             </div>
