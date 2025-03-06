@@ -13,4 +13,4 @@ Fitur:
 * Jadwal Waktu Sholat Indonesia
 * Quotes Islami
 
-Visit Website: https://islamic-bit.netlify.app/
+Visit:https://baruscoding.github.io/islamic-bit/
