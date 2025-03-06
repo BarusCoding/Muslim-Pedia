@@ -372,22 +372,106 @@
                         </div>
 
                         <div id="maalFields" class="zakat-fields">
+                            <div class="mb-3">
+                                <label for="harta" class="form-label">Total Harta (Rupiah)</label>
+                                <input type="number" class="form-control" id="harta" placeholder="Masukkan total harta">
                             </div>
+                            <div class="mb-3">
+                                <label for="hutang" class="form-label">Total Hutang (Rupiah)</label>
+                                <input type="number" class="form-control" id="hutang" placeholder="Masukkan total hutang">
+                            </div>
+                            <div class="mb-3">
+                                <label for="nishabMaal" class="form-label">Nishab (Rupiah)</label>
+                                <input type="number" class="form-control" id="nishabMaal" placeholder="Masukkan nilai nishab">
+                            </div>
+                            <button type="button" id="hitungMaal" class="btn btn-primary">Hitung Zakat Maal</button>
+                            <div id="hasilMaal" class="mt-3"></div>
+                        </div>
 
                         <div id="fitrahFields" class="zakat-fields" style="display: none;">
+                            <div class="mb-3">
+                                <label for="jumlahJiwa" class="form-label">Jumlah Jiwa</label>
+                                <input type="number" class="form-control" id="jumlahJiwa" placeholder="Masukkan jumlah jiwa">
                             </div>
+                            <div class="mb-3">
+                                <label for="hargaBeras" class="form-label">Harga Beras per Kg (Rupiah)</label>
+                                <input type="number" class="form-control" id="hargaBeras" placeholder="Masukkan harga beras">
+                            </div>
+                            <button type="button" id="hitungFitrah" class="btn btn-primary">Hitung Zakat Fitrah</button>
+                            <div id="hasilFitrah" class="mt-3"></div>
+                        </div>
 
                         <div id="penghasilanFields" class="zakat-fields" style="display: none;">
+                            <div class="mb-3">
+                                <label for="penghasilanPerBulan" class="form-label">Penghasilan Per Bulan (Rupiah)</label>
+                                <input type="number" class="form-control" id="penghasilanPerBulan" placeholder="Masukkan penghasilan per bulan">
                             </div>
+                            <div class="mb-3">
+                                <label for="nishabPenghasilan" class="form-label">Nishab Emas Saat Ini (Rupiah)</label>
+                                <input type="number" class="form-control" id="nishabPenghasilan" placeholder="Masukkan nishab emas">
+                            </div>
+                            <button type="button" id="hitungPenghasilan" class="btn btn-primary">Hitung Zakat Penghasilan</button>
+                            <div id="hasilPenghasilan" class="mt-3"></div>
+                        </div>
 
                         <div id="perdaganganFields" class="zakat-fields" style="display: none;">
+                            <div class="mb-3">
+                                <label for="modalPerdagangan" class="form-label">Modal Perdagangan (Rupiah)</label>
+                                <input type="number" class="form-control" id="modalPerdagangan" placeholder="Masukkan modal perdagangan">
                             </div>
+                            <div class="mb-3">
+                                <label for="keuntunganPerdagangan" class="form-label">Keuntungan Perdagangan (Rupiah)</label>
+                                <input type="number" class="form-control" id="keuntunganPerdagangan" placeholder="Masukkan keuntungan perdagangan">
+                            </div>
+                            <div class="mb-3">
+                                <label for="hutangPerdagangan" class="form-label">Hutang Perdagangan (Rupiah)</label>
+                                <input type="number" class="form-control" id="hutangPerdagangan" placeholder="Masukkan hutang perdagangan">
+                            </div>
+                            <div class="mb-3">
+                                <label for="nishabPerdagangan" class="form-label">Nishab Perdagangan (Rupiah)</label>
+                                <input type="number" class="form-control" id="nishabPerdagangan" placeholder="Masukkan nishab perdagangan">
+                            </div>
+                            <button type="button" id="hitungPerdagangan" class="btn btn-primary">Hitung Zakat Perdagangan</button>
+                            <div id="hasilPerdagangan" class="mt-3"></div>
+                        </div>
 
                         <div id="pertanianFields" class="zakat-fields" style="display: none;">
+                            <div class="mb-3">
+                                <label for="hasilPanen" class="form-label">Hasil Panen (Kg)</label>
+                                <input type="number" class="form-control" id="hasilPanen" placeholder="Masukkan hasil panen">
                             </div>
+                            <div class="mb-3">
+                                <label for="hargaPerKg" class="form-label">Harga per Kg (Rupiah)</label>
+                                <input type="number" class="form-control" id="hargaPerKg" placeholder="Masukkan harga per kg">
+                            </div>
+                            <div class="mb-3">
+                                <label for="biayaPengairan" class="form-label">Biaya Pengairan (Rupiah)</label>
+                                <input type="number" class="form-control" id="biayaPengairan" placeholder="Masukkan biaya pengairan">
+                            </div>
+                            <div class="mb-3">
+                                <label for="nishabPertanian" class="form-label">Nishab Pertanian (Kg)</label>
+                                <input type="number" class="form-control" id="nishabPertanian" placeholder="Masukkan nishab pertanian">
+                            </div>
+                            <button type="button" id="hitungPertanian" class="btn btn-primary">Hitung Zakat Pertanian</button>
+                            <div id="hasilPertanian" class="mt-3"></div>
+                        </div>
 
                         <div id="peternakanFields" class="zakat-fields" style="display: none;">
+                            <div class="mb-3">
+                                <label for="jumlahHewan" class="form-label">Jumlah Hewan</label>
+                                <input type="number" class="form-control" id="jumlahHewan" placeholder="Masukkan jumlah hewan">
                             </div>
+                            <div class="mb-3">
+                                <label for="jenisHewan" class="form-label">Jenis Hewan</label>
+                                <select class="form-select" id="jenisHewan">
+                                    <option value="unta">Unta</option>
+                                    <option value="sapi">Sapi</option>
+                                    <option value="kambing">Kambing/Domba</option>
+                                </select>
+                            </div>
+                            <button type="button" id="hitungPeternakan" class="btn btn-primary">Hitung Zakat Peternakan</button>
+                            <div id="hasilPeternakan" class="mt-3"></div>
+                        </div>
                     </form>
                 </div>
             </div>
