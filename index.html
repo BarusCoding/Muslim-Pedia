@@ -351,6 +351,34 @@
       </div>
     </div>
   </div>
+
+  <!-- Kalkulator Zakat -->
+  <section class="kalkulator-zakat py-5" style="background-color: #f0f8ff;">
+    <div class="container mx-auto py-3">
+        <h2 class="text-center mb-4" style="font-weight: 700; color: var(--blue2);">Kalkulator Zakat</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card p-4">
+                    <div class="mb-3">
+                        <label for="harta" class="form-label">Total Harta (Rupiah)</label>
+                        <input type="number" class="form-control" id="harta" placeholder="Masukkan total harta Anda">
+                    </div>
+                    <div class="mb-3">
+                        <label for="hutang" class="form-label">Total Hutang (Rupiah)</label>
+                        <input type="number" class="form-control" id="hutang" placeholder="Masukkan total hutang Anda">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nishab" class="form-label">Nishab Emas (Rupiah)</label>
+                        <input type="number" class="form-control" id="nishab" value="85000000" disabled>
+                    </div>
+                    <button id="hitungZakat" class="btn btn-primary">Hitung Zakat</button>
+                    <div id="hasilZakat" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <!-- Kalkulator Zakat -- >
   <!-- End Waktu Sholat -->
 
   <!-- Satu Ayat -->
