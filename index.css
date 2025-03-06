@@ -257,10 +257,11 @@ button {
 }
 
 
+
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Memastikan body menempati seluruh tinggi viewport */
+  min-height: 100vh;
 }
 
 .mobile-footer-menu {
@@ -283,19 +284,18 @@ body {
   text-decoration: none;
   font-size: 12px;
   padding: 8px 12px;
-  transition: background-color 0.3s ease; /* Transisi untuk efek hover */
+  transition: background-color 0.3s ease;
 }
 
 .mobile-footer-menu a img {
-  width: 24px;
+  width: 24px; /* Ukuran gambar diperbaiki */
   margin-bottom: 4px;
 }
 
 .mobile-footer-menu a:hover {
-  background-color: #f0f0f0; /* Efek hover saat kursor diarahkan ke tautan */
+  background-color: #f0f0f0;
 }
 
-/* Sembunyikan menu footer mobile pada layar yang lebih besar */
 @media (min-width: 768px) {
   .mobile-footer-menu {
     display: none;
