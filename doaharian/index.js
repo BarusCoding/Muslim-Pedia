@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const doaList = document.getElementById('doa-list');
     const searchInput = document.getElementById('search-input');
 
-    // Fungsi untuk menampilkan indikator loading
     function showLoading() {
         doaList.innerHTML = `
             <div class="col text-center">
@@ -13,12 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // Fungsi untuk menampilkan pesan error
     function showError(message) {
         doaList.innerHTML = `<p class="text-danger">${message}</p>`;
     }
 
-    // Fungsi untuk menampilkan data doa
     function displayDoa(doaData) {
         doaList.innerHTML = '';
         if (doaData.length === 0) {
@@ -40,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fungsi untuk menangani pencarian
     function setupSearch(doaData) {
         searchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
@@ -54,26 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Fungsi utama untuk mengambil data dan menampilkan halaman
-    function fetchData() {
-        showLoading(); // Tampilkan loading sebelum fetch
-
-        fetch('https://islamic-api-zhirrr.vercel.app/api/doaharian')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                displayDoa(data.data);
-                setupSearch(data.data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-                showError('Gagal memuat data doa. Silakan coba lagi nanti.');
-            });
+    async function fetchData() {
+        showLoading();
+        try {
+            const response = await fetch('https://islamic-api-zhirrr.vercel.app/api/doaharian');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            displayDoa(data.data);
+            setupSearch(data.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            showError('Gagal memuat data doa. Silakan coba lagi nanti.');
+        }
     }
 
-    fetchData(); // Panggil fungsi utama saat halaman dimuat
+    fetchData();
 });
