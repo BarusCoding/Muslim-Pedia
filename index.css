@@ -351,8 +351,7 @@ body {
     box-shadow: 0 0 0 
 
 
-
-   @media (max-width: 576px) {
+@media (max-width: 576px) {
     .menu-wrapper.row-cols-sm-3 > .col:nth-child(-n+4) {
         flex: 0 0 25%;
         max-width: 25%;
@@ -363,3 +362,4 @@ body {
         max-width: 25%;
     }
 }
+ 
