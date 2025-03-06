@@ -269,7 +269,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: var(--blue2);
+  background-color: var(--white);
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
