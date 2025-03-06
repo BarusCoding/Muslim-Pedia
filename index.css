@@ -20,6 +20,20 @@ a {
 button {
    border: none;
    outline: none;
+
+
+
+
+   .menu-item {
+    background-color: var(--blue1);
+    color: var(--white);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: var(--blue2);
+}
 }
 
 .header .text-header h1 {
