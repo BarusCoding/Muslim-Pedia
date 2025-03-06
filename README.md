@@ -1,5 +1,5 @@
-# Islamic Bit
-Islamic Bit adalah website yang menyediakan kebutuhan islami bagi semua orang.
+# Muslim Pedia
+Muslim Pedia adalah website yang menyediakan kebutuhan islami bagi semua orang.
 
 Fitur:
 * Al-Quran
