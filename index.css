@@ -334,34 +334,4 @@ body {
 
 .kalkulator-zakat .form-control:focus {
     border-color: var(--blue2);
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.kalkulator-zakat .btn-primary {
-    background-color: var(--blue2);
-    border-color: var(--blue2);
-    border-radius: 8px;
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.kalkulator-zakat .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.kalkulator-zakat .zakat-fields {
-    margin-top: 25px;
-}
-
-.kalkulator-zakat .form-check-label {
-    font-size: 1rem;
-    color: #333;
-}
-
-.kalkulator-zakat .form-check-input:checked {
-    background-color: var(--blue2);
-    border-color: var(--blue2);
-}
+    box-shadow: 0 0 0 
