@@ -280,43 +280,12 @@ $.ajax({
 
 //zakat
 $(document).ready(function() {
-    // ... (Fungsi change untuk jenis zakat) ...
-
-    // Fungsi untuk menghitung zakat maal
-    $('#hitungMaal').click(function(e) {
-        e.preventDefault();
-        // ... (Kode perhitungan zakat maal) ...
+    $('#jenisZakat').change(function() {
+        $('.zakat-fields').hide();
+        $('#' + $(this).val() + 'Fields').show();
     });
 
-    // Fungsi untuk menghitung zakat fitrah
-    $('#hitungFitrah').click(function(e) {
-        e.preventDefault();
-        // ... (Kode perhitungan zakat fitrah) ...
-    });
-
-    // Fungsi untuk menghitung zakat penghasilan
-    $('#hitungPenghasilan').click(function(e) {
-        e.preventDefault();
-        // ... (Kode perhitungan zakat penghasilan) ...
-    });
-
-    // Fungsi untuk menghitung zakat perdagangan
-    $('#hitungPerdagangan').click(function(e) {
-        e.preventDefault();
-        // ... (Kode perhitungan zakat perdagangan) ...
-    });
-
-    // Fungsi untuk menghitung zakat pertanian
-    $('#hitungPertanian').click(function(e) {
-        e.preventDefault();
-        // ... (Kode perhitungan zakat pertanian) ...
-    });
-
-    // Fungsi untuk menghitung zakat peternakan
-    $('#hitungPeternakan').click(function(e) {
-        e.preventDefault();
-        // ... (Kode perhitungan zakat peternakan) ...
-    });
+    // ... (Fungsi hitung zakat seperti sebelumnya) ...
 });
 //zakat
 
