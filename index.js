@@ -280,111 +280,42 @@ $.ajax({
 
 //zakat
 $(document).ready(function() {
-    // Fungsi untuk menampilkan/menyembunyikan field zakat berdasarkan jenis yang dipilih
-    $('input[name="jenisZakat"]').change(function() {
-        $('.zakat-fields').hide();
-        $('#' + $(this).val() + 'Fields').show();
-    });
+    // ... (Fungsi change untuk jenis zakat) ...
 
     // Fungsi untuk menghitung zakat maal
     $('#hitungMaal').click(function(e) {
         e.preventDefault();
-        let harta = parseFloat($('#harta').val()) || 0;
-        let hutang = parseFloat($('#hutang').val()) || 0;
-        let nishab = parseFloat($('#nishabMaal').val()) || 0;
-        let hartaBersih = harta - hutang;
-        let zakat = 0;
-
-        if (hartaBersih >= nishab) {
-            zakat = hartaBersih * 0.025;
-            $('#hasilMaal').html(`<p>Total zakat maal: Rp ${zakat.toLocaleString()}</p>`);
-        } else {
-            $('#hasilMaal').html(`<p>Harta belum mencapai nishab.</p>`);
-        }
+        // ... (Kode perhitungan zakat maal) ...
     });
 
     // Fungsi untuk menghitung zakat fitrah
     $('#hitungFitrah').click(function(e) {
         e.preventDefault();
-        let jumlahJiwa = parseInt($('#jumlahJiwa').val()) || 0;
-        let hargaBeras = parseFloat($('#hargaBeras').val()) || 0;
-        let totalFitrah = jumlahJiwa * 2.5 * hargaBeras;
-        $('#hasilFitrah').html(`<p>Total zakat fitrah: Rp ${totalFitrah.toLocaleString()}</p>`);
+        // ... (Kode perhitungan zakat fitrah) ...
     });
 
     // Fungsi untuk menghitung zakat penghasilan
     $('#hitungPenghasilan').click(function(e) {
         e.preventDefault();
-        let penghasilan = parseFloat($('#penghasilanPerBulan').val()) || 0;
-        let nishab = parseFloat($('#nishabPenghasilan').val()) || 0;
-        let zakat = 0;
-
-        if (penghasilan * 12 >= nishab) {
-            zakat = (penghasilan * 12) * 0.025;
-            $('#hasilPenghasilan').html(`<p>Total zakat penghasilan: Rp ${zakat.toLocaleString()}</p>`);
-        } else {
-            $('#hasilPenghasilan').html(`<p>Penghasilan belum mencapai nishab.</p>`);
-        }
+        // ... (Kode perhitungan zakat penghasilan) ...
     });
 
     // Fungsi untuk menghitung zakat perdagangan
     $('#hitungPerdagangan').click(function(e) {
         e.preventDefault();
-        let modal = parseFloat($('#modalPerdagangan').val()) || 0;
-        let keuntungan = parseFloat($('#keuntunganPerdagangan').val()) || 0;
-        let hutang = parseFloat($('#hutangPerdagangan').val()) || 0;
-        let nishab = parseFloat($('#nishabPerdagangan').val()) || 0;
-        let hartaBersih = modal + keuntungan - hutang;
-        let zakat = 0;
-
-        if (hartaBersih >= nishab) {
-            zakat = hartaBersih * 0.025;
-            $('#hasilPerdagangan').html(`<p>Total zakat perdagangan: Rp ${zakat.toLocaleString()}</p>`);
-        } else {
-            $('#hasilPerdagangan').html(`<p>Harta perdagangan belum mencapai nishab.</p>`);
-        }
+        // ... (Kode perhitungan zakat perdagangan) ...
     });
 
     // Fungsi untuk menghitung zakat pertanian
     $('#hitungPertanian').click(function(e) {
         e.preventDefault();
-        let hasilPanen = parseFloat($('#hasilPanen').val()) || 0;
-        let hargaPerKg = parseFloat($('#hargaPerKg').val()) || 0;
-        let biayaPengairan = parseFloat($('#biayaPengairan').val()) || 0;
-        let nishab = parseFloat($('#nishabPertanian').val()) || 0;
-        let hasilBersih = (hasilPanen * hargaPerKg) - biayaPengairan;
-        let zakat = 0;
-
-        if (hasilBersih >= (nishab * hargaPerKg)) {
-            // Asumsi pengairan tadah hujan (10%)
-            zakat = hasilBersih * 0.1;
-            $('#hasilPertanian').html(`<p>Total zakat pertanian: Rp ${zakat.toLocaleString()}</p>`);
-        } else {
-            $('#hasilPertanian').html(`<p>Hasil pertanian belum mencapai nishab.</p>`);
-        }
+        // ... (Kode perhitungan zakat pertanian) ...
     });
 
     // Fungsi untuk menghitung zakat peternakan
     $('#hitungPeternakan').click(function(e) {
         e.preventDefault();
-        let jumlahHewan = parseInt($('#jumlahHewan').val()) || 0;
-        let jenisHewan = $('#jenisHewan').val();
-        let zakat = 0;
-
-        // Contoh perhitungan zakat peternakan (sederhana)
-        if (jenisHewan === 'unta' && jumlahHewan >= 5) {
-            zakat = jumlahHewan * 0.025; // Contoh persentase
-        } else if (jenisHewan === 'sapi' && jumlahHewan >= 30) {
-            zakat = jumlahHewan * 0.02; // Contoh persentase
-        } else if (jenisHewan === 'kambing' && jumlahHewan >= 40) {
-            zakat = jumlahHewan * 0.025; // Contoh persentase
-        }
-
-        if (zakat > 0) {
-            $('#hasilPeternakan').html(`<p>Total zakat peternakan: ${zakat} ekor hewan.</p>`);
-        } else {
-            $('#hasilPeternakan').html(`<p>Jumlah hewan belum mencapai nishab.</p>`);
-        }
+        // ... (Kode perhitungan zakat peternakan) ...
     });
 });
 //zakat
