@@ -285,7 +285,93 @@ $(document).ready(function() {
         $('#' + $(this).val() + 'Fields').show();
     });
 
-    // ... (Fungsi hitung zakat seperti sebelumnya) ...
+    $('#hitungMaal').click(function(e) {
+        e.preventDefault();
+        var harta = parseFloat($('#harta').val()) || 0;
+        var hutang = parseFloat($('#hutang').val()) || 0;
+        var nishab = parseFloat($('#nishabMaal').val()) || 0;
+        var hasil = (harta - hutang) * 0.025;
+        if (harta - hutang >= nishab) {
+            $('#hasilMaal').html('Jumlah zakat maal: Rp ' + hasil.toLocaleString());
+        } else {
+            $('#hasilMaal').html('Harta belum mencapai nishab.');
+        }
+    });
+
+    $('#hitungFitrah').click(function(e) {
+        e.preventDefault();
+        var jiwa = parseInt($('#jumlahJiwa').val()) || 0;
+        var harga = parseFloat($('#hargaBeras').val()) || 0;
+        var hasil = jiwa * 2.5 * harga;
+        $('#hasilFitrah').html('Jumlah zakat fitrah: Rp ' + hasil.toLocaleString());
+    });
+
+    $('#hitungPenghasilan').click(function(e) {
+        e.preventDefault();
+        var penghasilan = parseFloat($('#penghasilanPerBulan').val()) || 0;
+        var nishab = parseFloat($('#nishabPenghasilan').val()) || 0;
+        var hasil = penghasilan * 0.025;
+        if (penghasilan >= nishab) {
+            $('#hasilPenghasilan').html('Jumlah zakat penghasilan: Rp ' + hasil.toLocaleString());
+        } else {
+            $('#hasilPenghasilan').html('Penghasilan belum mencapai nishab.');
+        }
+    });
+
+    $('#hitungPerdagangan').click(function(e) {
+        e.preventDefault();
+        var modal = parseFloat($('#modalPerdagangan').val()) || 0;
+        var keuntungan = parseFloat($('#keuntunganPerdagangan').val()) || 0;
+        var hutang = parseFloat($('#hutangPerdagangan').val()) || 0;
+        var nishab = parseFloat($('#nishabPerdagangan').val()) || 0;
+        var hasil = (modal + keuntungan - hutang) * 0.025;
+        if (modal + keuntungan - hutang >= nishab) {
+            $('#hasilPerdagangan').html('Jumlah zakat perdagangan: Rp ' + hasil.toLocaleString());
+        } else {
+            $('#hasilPerdagangan').html('Harta belum mencapai nishab.');
+        }
+    });
+
+    $('#hitungPertanian').click(function(e) {
+        e.preventDefault();
+        var hasilPanen = parseFloat($('#hasilPanen').val()) || 0;
+        var hargaPerKg = parseFloat($('#hargaPerKg').val()) || 0;
+        var biayaPengairan = parseFloat($('#biayaPengairan').val()) || 0;
+        var nishab = parseFloat($('#nishabPertanian').val()) || 0;
+        var hasil = (hasilPanen * hargaPerKg - biayaPengairan) * 0.05;
+        if (hasilPanen >= nishab) {
+            $('#hasilPertanian').html('Jumlah zakat pertanian: Rp ' + hasil.toLocaleString());
+        } else {
+            $('#hasilPertanian').html('Hasil panen belum mencapai nishab.');
+        }
+    });
+
+    $('#hitungPeternakan').click(function(e) {
+        e.preventDefault();
+        var jumlahHewan = parseInt($('#jumlahHewan').val()) || 0;
+        var jenisHewan = $('#jenisHewan').val();
+        var hasil = 0;
+
+        if (jenisHewan === 'unta') {
+            if (jumlahHewan >= 5) {
+                hasil = jumlahHewan / 5;
+            }
+        } else if (jenisHewan === 'sapi') {
+            if (jumlahHewan >= 30) {
+                hasil = jumlahHewan / 30;
+            }
+        } else if (jenisHewan === 'kambing') {
+            if (jumlahHewan >= 40) {
+                hasil = jumlahHewan / 40;
+            }
+        }
+
+        if (hasil > 0) {
+            $('#hasilPeternakan').html('Jumlah zakat peternakan: ' + hasil + ' ekor.');
+        } else {
+            $('#hasilPeternakan').html('Jumlah hewan belum mencapai nishab.');
+        }
+    });
 });
 //zakat
 
