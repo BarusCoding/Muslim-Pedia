@@ -27,18 +27,18 @@ $(document).ready(function () {
 
     function cariTafsir(keyword) {
         $.ajax({
-            url: `http://api.alquran.cloud/v1/search/${keyword}/all/en`, // Tanzil Quran API
+            url: `https://equran.id/api/v2/search/${keyword}`, // API Quran Kemenag
             success: function (response) {
-                if (response.data.count > 0) {
-                    const ayat = response.data.result[0].text;
-                    chatLog.append(`<p><strong>Ustadz (Tafsir):</strong> ${ayat}</p>`);
+                if (response && response.data && response.data.verses && response.data.verses.length > 0) {
+                    const ayat = response.data.verses[0];
+                    chatLog.append(`<p><strong>Ustadz (Tafsir):</strong> ${ayat.text.arab} <br> ${ayat.translation.id}</p>`);
                 } else {
                     // Jika tidak ada tafsir, coba cari hadis
                     cariHadis(keyword);
                 }
                 chatLog.scrollTop(chatLog[0].scrollHeight);
             },
-            error: function () {
+            error: function (error) {
                 chatLog.append(`<p><strong>Ustadz:</strong> Gagal mengambil data tafsir.</p>`);
                 chatLog.scrollTop(chatLog[0].scrollHeight);
             }
@@ -49,15 +49,19 @@ $(document).ready(function () {
         $.ajax({
             url: `https://api.hadith.sutanlab.id/books/muslim?range=1-10`, // API Hadis Sutan Lab
             success: function (response) {
-                const hadisRelevan = response.data.filter(hadis => hadis.contents.toLowerCase().includes(keyword));
-                if (hadisRelevan.length > 0) {
-                    chatLog.append(`<p><strong>Ustadz (Hadis):</strong> ${hadisRelevan[0].contents}</p>`);
+                if (response && response.data && response.data.length > 0) {
+                    const hadisRelevan = response.data.filter(hadis => hadis.contents.toLowerCase().includes(keyword));
+                    if (hadisRelevan.length > 0) {
+                        chatLog.append(`<p><strong>Ustadz (Hadis):</strong> ${hadisRelevan[0].contents}</p>`);
+                    } else {
+                        chatLog.append(`<p><strong>Ustadz:</strong> Maaf, saya tidak menemukan jawaban.</p>`);
+                    }
                 } else {
                     chatLog.append(`<p><strong>Ustadz:</strong> Maaf, saya tidak menemukan jawaban.</p>`);
                 }
                 chatLog.scrollTop(chatLog[0].scrollHeight);
             },
-            error: function () {
+            error: function (error) {
                 chatLog.append(`<p><strong>Ustadz:</strong> Gagal mengambil data hadis.</p>`);
                 chatLog.scrollTop(chatLog[0].scrollHeight);
             }
