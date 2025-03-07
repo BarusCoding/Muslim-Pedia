@@ -296,7 +296,7 @@ body {
     align-items: center;
     color: var(--blue2);
     text-decoration: none;
-    font-size: 10px; /* Ukuran font diperkecil */
+    font-size: 7px; /* Ukuran font diperkecil */
     padding: 8px 12px;
     transition: background-color 0.3s ease;
     text-align: center; /* Teks rata tengah */
