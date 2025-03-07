@@ -296,9 +296,10 @@ body {
     align-items: center;
     color: var(--blue2);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 10px; /* Ukuran font diperkecil */
     padding: 8px 12px;
     transition: background-color 0.3s ease;
+    text-align: center; /* Teks rata tengah */
 }
 
 .mobile-footer-menu a img {
@@ -314,8 +315,8 @@ body {
 .mobile-footer-menu .tanya-ustadz-menu {
     position: relative;
     transform: translateY(-10px);
-    background-color: #007bff; /* Warna latar belakang bubble */
-    color: white; /* Warna teks bubble */
+    background-color: #007bff;
+    color: white;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
     padding: 10px;
@@ -325,7 +326,10 @@ body {
     .mobile-footer-menu {
         display: none;
     }
-}}.kalkulator-zakat {
+}
+
+}}
+.kalkulator-zakat {
     padding: 40px 0;
 }
 
