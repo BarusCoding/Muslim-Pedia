@@ -1,33 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
+// JavaScript untuk halaman Tanya Ustadz
+document.addEventListener('DOMContentLoaded', function () {
     const chatLog = document.getElementById('chat-log');
     const userInput = document.getElementById('user-input');
     const sendButton = document.getElementById('send-button');
 
-    sendButton.addEventListener('click', () => {
+    sendButton.addEventListener('click', function () {
         const message = userInput.value;
-        if (message) {
-            displayMessage('user', message);
-            getAiResponse(message);
+        if (message.trim() !== '') {
+            chatLog.innerHTML += `<p><strong>Anda:</strong> ${message}</p>`;
             userInput.value = '';
+            // Di sini Anda dapat menambahkan logika untuk mendapatkan jawaban dari "ustadz"
+            // Misalnya, dengan menggunakan API atau logika lokal
+            chatLog.innerHTML += `<p><strong>Ustadz:</strong> Jawaban dari ustadz...</p>`;
+            chatLog.scrollTop = chatLog.scrollHeight;
         }
     });
 
-    function displayMessage(sender, message) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
-        messageDiv.textContent = message;
-        chatLog.appendChild(messageDiv);
-        chatLog.scrollTop = chatLog.scrollHeight; // Scroll ke pesan terbaru
-    }
-
-    async function getAiResponse(message) {
-        // Ganti dengan logika AI Islami Anda
-        const response = await fetch('/api/ai-response', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message })
-        });
-        const data = await response.json();
-        displayMessage('ai', data.response);
-    }
+    userInput.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            sendButton.click();
+        }
+    });
 });
