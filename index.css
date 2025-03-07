@@ -312,15 +312,20 @@ body {
 
 /* Gaya khusus untuk Tanya Ustadz */
 .mobile-footer-menu .tanya-ustadz-menu {
-    transform: translateY(-10px); /* Mengangkat sedikit ke atas */
-    position: relative; /* Menggunakan position relative */
+    position: relative;
+    transform: translateY(-10px);
+    background-color: #007bff; /* Warna latar belakang bubble */
+    color: white; /* Warna teks bubble */
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    padding: 10px;
 }
 
 @media (min-width: 768px) {
     .mobile-footer-menu {
         display: none;
     }
-}.kalkulator-zakat {
+}}.kalkulator-zakat {
     padding: 40px 0;
 }
 
