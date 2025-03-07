@@ -5,7 +5,7 @@ window.onload = function () {
 
   // Request ke api dengan parameter yang sudah diambil
   $.ajax({
-    url:`https://quran-api-id.vercel.app/surahs/${numberSurah}`,
+    url: `https://api.quran.gading.dev/surah/${nomerSurat}`,
     success: (results) => {
       // Mengecek apakah yang dihasilkan dari request API adalah JSON atau String
       results = typeof results == "string" ? JSON.parse(results) : results;
