@@ -305,7 +305,7 @@ body {
 
 .mobile-footer-menu a img {
     width: 24px;
-    margin-bottom: 2px; /* Margin diperkecil */
+    margin-bottom: 4px; /* Margin diperkecil */
 }
 
 .mobile-footer-menu a:hover {
