@@ -285,7 +285,7 @@ body {
     width: 100%;
     background-color: var(--white);
     display: flex;
-    justify-content: space-around; /* Mengembalikan justify-content */
+    justify-content: space-around;
     padding: 10px 0;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -312,22 +312,15 @@ body {
 
 /* Gaya khusus untuk Tanya Ustadz */
 .mobile-footer-menu .tanya-ustadz-menu {
-    transform: translateY(-20px);
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    position: absolute; /* Menggunakan position absolute */
-    left: 50%; /* Menempatkan di tengah */
-    transform: translateX(-50%) translateY(-20px); /* Memastikan tepat di tengah */
+    transform: translateY(-10px); /* Mengangkat sedikit ke atas */
+    position: relative; /* Menggunakan position relative */
 }
 
 @media (min-width: 768px) {
     .mobile-footer-menu {
         display: none;
     }
-}
-.kalkulator-zakat {
+}.kalkulator-zakat {
     padding: 40px 0;
 }
 
