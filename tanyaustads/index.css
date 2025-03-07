@@ -1,20 +1,52 @@
-/* Gaya khusus untuk halaman Tanya Ustadz */
+/* Root variables */
+:root {
+    --yellow: #FFD500;
+    --blue1: #003F88;
+    --blue2: #00296B;
+    --white: #F7F7F7;
+    font-size: 12px;
+}
+
+/* Global body styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Tanya Ustadz specific styles */
 #chat-container {
-    border: 1px solid #ccc;
     padding: 10px;
     margin-top: 20px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
 #chat-log {
-    height: 300px;
-    overflow-y: scroll;
+    flex-grow: 1;
+    overflow-y: auto;
     margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.input-container {
+    display: flex;
 }
 
 #user-input {
-    width: 70%;
+    flex-grow: 1;
     padding: 8px;
     margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 #send-button {
@@ -23,4 +55,33 @@
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 6px;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 576px) {
+    #chat-container {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px) {
+    :root {
+        font-size: 16px;
+    }
+    #chat-container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Add styles for 1200px and above if needed */
 }
