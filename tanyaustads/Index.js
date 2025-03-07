@@ -27,11 +27,11 @@ $(document).ready(function () {
 
     function cariTafsir(keyword) {
         $.ajax({
-            url: `https://equran.id/api/v2/search/${keyword}`, // API Quran Kemenag
+            url: `http://api.alquran.cloud/v1/search/${keyword}/all/en`, // Tanzil Quran API
             success: function (response) {
-                if (response.data.verses.length > 0) {
-                    const ayat = response.data.verses[0];
-                    chatLog.append(`<p><strong>Ustadz (Tafsir):</strong> ${ayat.text.arab} <br> ${ayat.translation.id}</p>`);
+                if (response.data.count > 0) {
+                    const ayat = response.data.result[0].text;
+                    chatLog.append(`<p><strong>Ustadz (Tafsir):</strong> ${ayat}</p>`);
                 } else {
                     // Jika tidak ada tafsir, coba cari hadis
                     cariHadis(keyword);
