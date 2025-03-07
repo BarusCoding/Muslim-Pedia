@@ -375,6 +375,17 @@ $(document).ready(function() {
 });
 //zakat
 
+// JavaScript untuk Pop-up
+window.onload = function () {
+    document.getElementById('myPopup').style.display = 'block';
+};
+
+document.getElementById('closePopup').addEventListener('click', function () {
+    document.getElementById('myPopup').style.display = 'none';
+});
+
+// ... (JavaScript lainnya) ...
+
 function copyLink() {
   navigator.clipboard.writeText("https://islamic-bit.netlify.app");
 }
