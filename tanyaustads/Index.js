@@ -1,23 +1,39 @@
-// JavaScript untuk halaman Tanya Ustadz
-document.addEventListener('DOMContentLoaded', function () {
-    const chatLog = document.getElementById('chat-log');
-    const userInput = document.getElementById('user-input');
-    const sendButton = document.getElementById('send-button');
+$(document).ready(function () {
+    const chatLog = $('#chat-log');
+    const userInput = $('#user-input');
+    const sendButton = $('#send-button');
 
-    sendButton.addEventListener('click', function () {
-        const message = userInput.value;
+    sendButton.click(function () {
+        const message = userInput.val();
         if (message.trim() !== '') {
-            chatLog.innerHTML += `<p><strong>Anda:</strong> ${message}</p>`;
-            userInput.value = '';
-            // Di sini Anda dapat menambahkan logika untuk mendapatkan jawaban dari "ustadz"
-            // Misalnya, dengan menggunakan API atau logika lokal
-            chatLog.innerHTML += `<p><strong>Ustadz:</strong> Jawaban dari ustadz...</p>`;
-            chatLog.scrollTop = chatLog.scrollHeight;
+            chatLog.append(`<p><strong>Anda:</strong> ${message}</p>`);
+            userInput.val('');
+
+            // Menggunakan API-Islami untuk mendapatkan jawaban
+            $.ajax({
+                url: 'https://api.banghasan.com/sholat/format/json/kota/712/tanggal/2023-10-25', // Contoh endpoint (ganti sesuai kebutuhan)
+                method: 'GET',
+                success: function (response) {
+                    // Logika untuk menampilkan jawaban dari API
+                    if (response && response.hasil && response.hasil.maghrib) {
+                        const jawaban = `Waktu maghrib hari ini adalah ${response.hasil.maghrib}`;
+                        chatLog.append(`<p><strong>Ustadz:</strong> ${jawaban}</p>`);
+                    } else {
+                        chatLog.append(`<p><strong>Ustadz:</strong> Maaf, saya tidak dapat menemukan jawaban.</p>`);
+                    }
+                    chatLog.scrollTop(chatLog[0].scrollHeight);
+                },
+                error: function (error) {
+                    console.error('Error fetching answer:', error);
+                    chatLog.append(`<p><strong>Ustadz:</strong> Maaf, terjadi kesalahan saat menghubungi server.</p>`);
+                    chatLog.scrollTop(chatLog[0].scrollHeight);
+                }
+            });
         }
     });
 
-    userInput.addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
+    userInput.keypress(function (event) {
+        if (event.which === 13) {
             sendButton.click();
         }
     });
