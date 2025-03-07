@@ -296,15 +296,16 @@ body {
     align-items: center;
     color: var(--blue2);
     text-decoration: none;
-    font-size: 7px; /* Ukuran font diperkecil */
-    padding: 8px 12px;
+    font-size: 10px;
+    padding: 6px 12px; /* Padding diperkecil */
     transition: background-color 0.3s ease;
-    text-align: center; /* Teks rata tengah */
+    text-align: center;
+    line-height: 1; /* Line height diatur ke 1 */
 }
 
 .mobile-footer-menu a img {
     width: 24px;
-    margin-bottom: 4px;
+    margin-bottom: 2px; /* Margin diperkecil */
 }
 
 .mobile-footer-menu a:hover {
@@ -327,8 +328,10 @@ body {
         display: none;
     }
 }
-
 }}
+
+
+
 .kalkulator-zakat {
     padding: 40px 0;
 }
