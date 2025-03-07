@@ -279,43 +279,57 @@ body {
 }
 
 .mobile-footer-menu {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--white);
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center; /* Mengubah justify-content */
+    padding: 10px 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-footer-menu a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--blue2);
-  text-decoration: none;
-  font-size: 12px;
-  padding: 8px 12px;
-  transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--blue2);
+    text-decoration: none;
+    font-size: 12px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+    margin: 0 10px; /* Menambahkan margin untuk pemisahan */
 }
 
 .mobile-footer-menu a img {
-  width: 24px; /* Ukuran gambar diperbaiki */
-  margin-bottom: 4px;
+    width: 24px;
+    margin-bottom: 4px;
 }
 
 .mobile-footer-menu a:hover {
-  background-color: #f0f0f0;
+    background-color: #f0f0f0;
+}
+
+/* Gaya khusus untuk Tanya Ustadz */
+.mobile-footer-menu .tanya-ustadz-menu {
+    transform: translateY(-20px);
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* Menyembunyikan elemen lain selain Tanya Ustadz */
+.mobile-footer-menu a:not(.tanya-ustadz-menu) {
+    display: none;
 }
 
 @media (min-width: 768px) {
-  .mobile-footer-menu {
-    display: none;
-  }
+    .mobile-footer-menu {
+        display: none;
+    }
 }
-
 
 .kalkulator-zakat {
     padding: 40px 0;
